@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Guess the Web Tech Term</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/courses">Courses</a>
+      <a href="/instructors">Instructors</a>
+      <a href="/contact">Contact</a>
+      <a href="/faq">FAQ</a>
+      <a href="/events">Events</a>
+      <a href="/activity">Activity</a>
+    </nav>
+  </header>
+  <main>
+    <p id="definition"></p>
+    <input type="text" id="guess" placeholder="Your guess...">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="feedback"></p>
+  </main>
+  <footer>
+    <p>&copy; 2025 Online Learning Platform</p>
+  </footer>
+  <script src="/js/activity.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Live Events</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/courses">Courses</a>
+      <a href="/instructors">Instructors</a>
+      <a href="/events">Events</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contact">Contact</a>
+      <a href="/activity">Activity</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Filter Events</h2>
+
+    <label for="year">Year:</label>
+    <select id="year">
+      <option value="">All</option>
+      <option value="2025">2025</option>
+      <option value="2024">2024</option>
+      <option value="2023">2023</option>
+    </select>
+
+    <label for="type">Type:</label>
+    <select id="type">
+      <option value="">All</option>
+      <option value="Workshop">Workshop</option>
+      <option value="Guest Lecture">Guest Lecture</option>
+      <option value="Q&A">Q&A</option>
+      <option value="Recorded Session">Recorded Session</option>
+    </select>
+
+    <div id="event-results" class="event-container"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Online Learning Platform</p>
+  </footer>
+
+  <script src="/js/filterEvents.js"></script>
+</body>
+</html>

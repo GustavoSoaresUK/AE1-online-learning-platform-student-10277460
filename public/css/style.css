@@ -1,0 +1,248 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #5a5a5c;          /* Dark Blue */
+  --secondary: #10b981;        /* Emerald Green */
+  --accent: #ffa200;           /* Amber */
+  --bg-light: #f9fafb;         /* Very Light Gray */
+  --bg-dark: #505050;          /* Navy Black */
+  --text-light: #ffffff;
+  --text-dark: #1f2937;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --overlay: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('/images/pexels-photo-879109.webp');
+  background-size: cover;
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+/* Header and Navigation */
+header {
+  background: var(--primary);
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+header h1 {
+  margin-bottom: 0.5em;
+  color: var(--text-light);
+}
+
+nav {
+  margin-top: 0.5em;
+}
+
+nav a {
+  color: var(--text-light);
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Main Content Area */
+main {
+  position: center;
+  background-color: var(--overlay);
+  padding: 2em;
+  margin: 2em auto;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+/* Cards for courses/instructors/events */
+.card {
+  background: var(--card-bg);
+  color: var(--text-dark);
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h2 {
+  margin-bottom: 0.5em;
+  color: var(--primary);
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  background: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Forms */
+form {
+  background: var(--card-bg);
+  color: var(--text-dark);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  max-width: 600px;
+  margin: auto;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.7em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+button {
+  background: var(--secondary);
+  color: var(--text-light);
+  border: none;
+  padding: 0.8em 1.5em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--accent);
+}
+
+/* Activity Game */
+#definition, #feedback, #score {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: var(--text-light);
+}
+
+#try-again {
+  margin-top: 1em;
+  display: inline-block;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 0.5em 0;
+  }
+
+  main {
+    margin: 1em;
+    padding: 1.5em;
+  }
+
+  form {
+    padding: 1.5em;
+  }
+}
+/* Intro Banner Styling */
+.intro-banner {
+  margin: 2em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-card {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  padding: 2em;
+  border-radius: 12px;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  animation: fadeIn 1s ease-out;
+}
+
+.intro-card h2 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: var(--accent);
+}
+
+.intro-card p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* FAQ Styling */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.faq-card {
+  background: var(--card-bg);
+  color: var(--text-dark);
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  cursor: pointer;
+  animation: fadeIn 0.6s ease-out;
+  transition: background 0.3s;
+}
+
+.faq-card:hover {
+  background: #f1f5f9;
+}
+
+.faq-question {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  margin-top: 0.5em;
+}
+
+.faq-answer.active {
+  max-height: 300px;
+  opacity: 1;
+}
+.form-response {
+  margin-top: 1em;
+  font-weight: bold;
+  display: none;
+}

@@ -1,0 +1,20 @@
+app.get('/api/events', async (req, res) => {
+  const { year, type } = req.query;
+  const db = await getDbConnection();
+
+  let query = 'SELECT * FROM events WHERE 1=1';
+  let params = [];
+
+  if (year) {
+    query += ' AND strftime("%Y", date) = ?';
+    params.push(year);
+  }
+
+  if (type) {
+    query += ' AND type = ?';
+    params.push(type);
+  }
+
+  const events = await db.all(query, params);
+  res.json(events);
+});
