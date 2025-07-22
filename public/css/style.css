@@ -20,10 +20,11 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('/images/pexels-photo-879109.webp');
+  background-image: url('/images/thetulipcom.webp');
   background-size: cover;
   color: var(--text-light);
   min-height: 100vh;
+ 
 }
 
 /* Header and Navigation */
@@ -90,11 +91,22 @@ main {
 footer {
   position: fixed;
   bottom: 0;
-  background: var(--primary);
-  color: var(--text-light);
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Roboto', sans-serif;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 2em;
+}
+
+
+body {
+  margin: 0;
+  padding-bottom: 6em; 
 }
 
 /* Forms */
@@ -174,21 +186,33 @@ button:hover {
 }
 
 .intro-card {
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  color: white;
+  /* use your chosen font – replace Roboto as needed */
+  font-family: 'Roboto', sans-serif;
+
+  /* semi‑transparent black background (50% opacity) */
+  background: rgba(0, 0, 0, 0.5);
+
+  /* you can tweak the text opacity here too */
+  color: rgba(255, 255, 255, 0.9);
+
   padding: 2em;
   border-radius: 12px;
   max-width: 800px;
   text-align: center;
-  box-shadow: 0 4px 12px var(--card-shadow);
+
+  /* softer shadow on dark background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
   animation: fadeIn 1s ease-out;
 }
 
-.intro-card h2 {
-  font-family: 'Patrick Hand', cursive;
+
+intro-card h2 {
+  font-family: 'Roboto', sans-serif;
   font-size: 2em;
   margin-bottom: 0.5em;
-  color: var(--accent);
+  /* semi‑transparent black (70% opacity) */
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .intro-card p {
@@ -245,4 +269,21 @@ button:hover {
   margin-top: 1em;
   font-weight: bold;
   display: none;
+}
+/* make all cards/forms match the intro‑card overlay style */
+.card,
+.faq-card,
+form {
+  /* semi‑transparent black */
+  background: var(--overlay) !important; /* rgba(0,0,0,0.6) from :root */
+  color: var(--text-light) !important;   /* white text */
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ensure headings inside them stay bright */
+.card h2,
+.faq-card .faq-question,
+form label {
+  color: var(--text-light) !important;
 }
